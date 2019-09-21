@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to Comment Reader</h1>
+    <br />
+
+    @if (ViewBag.Message != null)
+    {
+        <div class="alert alert-danger" role="alert">
+            @ViewBag.Message
+        </div>
+    }
+
+    <form asp-action="Comments" asp-controller="Home" method="post">
+        <div class="input-group input-group-lg">
+            <input name="url" placeholder="Youtube Link" type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <br />
+        <br />
+        <button type="submit" class="btn btn-secondary btn-lg" value="Submit">Submit</button>
+    </form>
+
+</div>
+
+
