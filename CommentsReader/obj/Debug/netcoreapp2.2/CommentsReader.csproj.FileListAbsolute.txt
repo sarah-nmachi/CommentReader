@@ -28,3 +28,4 @@ C:\Users\sarah\source\repos\CommentsReader\CommentsReader\obj\Debug\netcoreapp2.
 C:\Users\sarah\source\repos\CommentsReader\CommentsReader\obj\Debug\netcoreapp2.2\CommentsReader.dll
 C:\Users\sarah\source\repos\CommentsReader\CommentsReader\obj\Debug\netcoreapp2.2\CommentsReader.pdb
 C:\Users\sarah\source\repos\CommentsReader\CommentsReader\obj\Debug\netcoreapp2.2\CommentsReader.csproj.CopyComplete
+C:\Users\sarah\source\repos\CommentsReader\CommentsReader\obj\Debug\netcoreapp2.2\Razor\Views\Home\Error.g.cshtml.cs

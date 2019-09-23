@@ -22,9 +22,21 @@ namespace CommentsReader.Services
             _configuration = configuration;
         }
 
-        public Task<YoutubeResponse> GetComments(string videoId)
+        public async Task<YoutubeResponse> GetComments(string videoId)
         {
-            throw new NotImplementedException();
+            var client = _httpClientFactory.CreateClient("youtube");
+            var response = await client.GetAsync($"commentThreads?part=id%2C%20replies%2C%20snippet&key={_configuration["Youtube-Key"]}&videoId={videoId}");
+            
+            if (response.IsSuccessStatusCode)
+            {
+                var responseString = await response.Content.ReadAsStringAsync();
+                var obj = JsonConvert.DeserializeObject<YoutubeResponse>(responseString);
+                return obj;
+            }
+            return null;
         }
     }
+   
 }
+
+

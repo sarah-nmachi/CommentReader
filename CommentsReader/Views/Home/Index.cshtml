@@ -1,27 +1,31 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿<!DOCTYPE html>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome to Comment Reader</h1>
-    <br />
 
-    @if (ViewBag.Message != null)
-    {
-        <div class="alert alert-danger" role="alert">
-            @ViewBag.Message
-        </div>
+    @{
+        ViewData["Title"] = "Home Page";
     }
 
-    <form asp-action="Comments" asp-controller="Home" method="post">
-        <div class="input-group input-group-lg">
-            <input name="url" placeholder="Youtube Link" type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
-        </div>
+    <div class="text-center">
+        <h1 class="display-4">Welcome to Comment Reader</h1>
         <br />
-        <br />
-        <button type="submit" class="btn btn-secondary btn-lg" value="Submit">Submit</button>
-    </form>
 
+        <asp:Content ID="indexContent" ContentPlaceHolderID="MainContent" runat="server">
+            @if (TempData["message"] != null)
+            {
+                <div class="alert alert-danger" role="alert">
+                    @Html.Encode(TempData["message"])
+                </div>
+            }
+
+            <form asp-action="Comments" asp-controller="Home" method="post">
+                <div class="input-group input-group-lg">
+                    <input name="url" placeholder="Youtube Link" type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                <br />
+                <br />
+                <button type="submit" class="btn btn-secondary btn-lg" value="Submit">Submit</button>
+            </form>
+
+        </asp:Content>
 </div>
-
 

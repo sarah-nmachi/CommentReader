@@ -5,27 +5,66 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using CommentsReader.Models;
+using CommentsReader.Interfaces;
 
 namespace CommentsReader.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index(string message)
+        private readonly IYoutubeAPIService _youtubeAPIService;
+        public HomeController(IYoutubeAPIService youtubeAPIService)
         {
-            if (message != null)
-                ViewBag.Message = message;
+            _youtubeAPIService = youtubeAPIService;
+        }
+        public  IActionResult Index()
+        {
+            
             return View();
         }
 
-        public IActionResult Privacy()
+        [HttpPost]
+        public async Task<IActionResult> Comments(string url)
         {
-            return View();
-        }
+            try
+            {
+                var equalsIndex = url.IndexOf("=") + 1;
+                var andIndex = url.IndexOf("&");
+                var videoId = url.Substring(equalsIndex, andIndex - equalsIndex);
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+                var youtuberesponse = await _youtubeAPIService.GetComments(videoId);
+                if (youtuberesponse == null)
+                {
+                    TempData["message"] = "An Error Occured ";
+                    return RedirectToAction("Index");
+                }
+                   
+
+                List<CommentModel> comments = new List<CommentModel>();
+
+                foreach (var item in youtuberesponse.items)
+                {
+                    comments.Add(new CommentModel
+                    {
+                        CommentString = item.snippet.topLevelComment.snippet.textOriginal,
+                        Date = item.snippet.topLevelComment.snippet.publishedAt.ToString(),
+                        UserName = item.snippet.topLevelComment.snippet.authorDisplayName,
+                        Rating = item.snippet.topLevelComment.snippet.likeCount.ToString()
+                    });
+                }
+
+               // string csv = String.Join(",", comments.Select(x => x.ToString()).ToArray());
+                return null;
+            }
+            catch (System.Exception)
+            {
+
+                
+                TempData["message"] = "An Error Occured ";
+                return RedirectToAction("Index");
+            }
+
+
         }
+       
     }
 }
