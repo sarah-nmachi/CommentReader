@@ -8,6 +8,7 @@ namespace CommentsReader.Interfaces
 {
     public interface IYoutubeAPIService
     {
-        Task<YoutubeResponse> GetComments(string videoId);
+        //Task<YoutubeResponse> GetComments(string videoId);
+        Task<List<Item>> GetComments(string videoId);
     }
 }

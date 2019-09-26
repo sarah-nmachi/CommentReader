@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using CommentsReader.Models;
 using CommentsReader.Interfaces;
+using ServiceStack.Text;
 
 namespace CommentsReader.Controllers
 {
@@ -27,9 +28,11 @@ namespace CommentsReader.Controllers
         {
             try
             {
+                // sample url https://www.youtube.com/watch?v=bATXe1XhIZ8
                 var equalsIndex = url.IndexOf("=") + 1;
-                var andIndex = url.IndexOf("&");
-                var videoId = url.Substring(equalsIndex, andIndex - equalsIndex);
+                
+                var videoId = url.Substring(equalsIndex, url.Length - equalsIndex);
+                
 
                 var youtuberesponse = await _youtubeAPIService.GetComments(videoId);
                 if (youtuberesponse == null)
@@ -41,7 +44,7 @@ namespace CommentsReader.Controllers
 
                 List<CommentModel> comments = new List<CommentModel>();
 
-                foreach (var item in youtuberesponse.items)
+                foreach (var item in youtuberesponse)
                 {
                     comments.Add(new CommentModel
                     {
@@ -52,13 +55,16 @@ namespace CommentsReader.Controllers
                     });
                 }
 
-               // string csv = String.Join(",", comments.Select(x => x.ToString()).ToArray());
-                return null;
+
+                // convert to csv
+                string csv = CsvSerializer.SerializeToCsv(comments);
+                return File(new System.Text.UTF8Encoding().GetBytes(csv), "text/csv", "YoutubeComment.csv");
+               
             }
             catch (System.Exception)
             {
 
-                
+
                 TempData["message"] = "An Error Occured ";
                 return RedirectToAction("Index");
             }

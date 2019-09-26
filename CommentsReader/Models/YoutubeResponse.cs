@@ -5,8 +5,9 @@ using System.Threading.Tasks;
 
 namespace CommentsReader.Models
 {
-   
-        public class YoutubeResponse
+    // I converted the the json to csharp. check it out if fast and cool http://json2csharp.com/ and nice
+
+    public class YoutubeResponse
         {
             public string kind { get; set; }
             public string etag { get; set; }
