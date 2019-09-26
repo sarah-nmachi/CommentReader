@@ -5,7 +5,6 @@ C:\Users\sarah\source\repos\CommentsReader\CommentsReader\bin\Release\netcoreapp
 C:\Users\sarah\source\repos\CommentsReader\CommentsReader\bin\Release\netcoreapp2.2\CommentsReader.pdb
 C:\Users\sarah\source\repos\CommentsReader\CommentsReader\bin\Release\netcoreapp2.2\CommentsReader.Views.dll
 C:\Users\sarah\source\repos\CommentsReader\CommentsReader\bin\Release\netcoreapp2.2\CommentsReader.Views.pdb
-C:\Users\sarah\source\repos\CommentsReader\CommentsReader\obj\Release\netcoreapp2.2\CommentsReader.csprojAssemblyReference.cache
 C:\Users\sarah\source\repos\CommentsReader\CommentsReader\obj\Release\netcoreapp2.2\CommentsReader.csproj.CoreCompileInputs.cache
 C:\Users\sarah\source\repos\CommentsReader\CommentsReader\obj\Release\netcoreapp2.2\CommentsReader.RazorAssemblyInfo.cache
 C:\Users\sarah\source\repos\CommentsReader\CommentsReader\obj\Release\netcoreapp2.2\CommentsReader.RazorAssemblyInfo.cs
@@ -14,7 +13,6 @@ C:\Users\sarah\source\repos\CommentsReader\CommentsReader\obj\Release\netcoreapp
 C:\Users\sarah\source\repos\CommentsReader\CommentsReader\obj\Release\netcoreapp2.2\CommentsReader.TagHelpers.input.cache
 C:\Users\sarah\source\repos\CommentsReader\CommentsReader\obj\Release\netcoreapp2.2\CommentsReader.TagHelpers.output.cache
 C:\Users\sarah\source\repos\CommentsReader\CommentsReader\obj\Release\netcoreapp2.2\CommentsReader.RazorCoreGenerate.cache
-C:\Users\sarah\source\repos\CommentsReader\CommentsReader\obj\Release\netcoreapp2.2\Razor\Views\Home\Error.g.cshtml.cs
 C:\Users\sarah\source\repos\CommentsReader\CommentsReader\obj\Release\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
 C:\Users\sarah\source\repos\CommentsReader\CommentsReader\obj\Release\netcoreapp2.2\Razor\Views\Home\Privacy.g.cshtml.cs
 C:\Users\sarah\source\repos\CommentsReader\CommentsReader\obj\Release\netcoreapp2.2\Razor\Views\Shared\Error.g.cshtml.cs
@@ -29,3 +27,4 @@ C:\Users\sarah\source\repos\CommentsReader\CommentsReader\obj\Release\netcoreapp
 C:\Users\sarah\source\repos\CommentsReader\CommentsReader\obj\Release\netcoreapp2.2\CommentsReader.dll
 C:\Users\sarah\source\repos\CommentsReader\CommentsReader\obj\Release\netcoreapp2.2\CommentsReader.pdb
 C:\Users\sarah\source\repos\CommentsReader\CommentsReader\obj\Release\netcoreapp2.2\CommentsReader.csproj.CopyComplete
+C:\Users\sarah\source\repos\CommentsReader\CommentsReader\obj\Release\netcoreapp2.2\CommentsReader.csprojAssemblyReference.cache

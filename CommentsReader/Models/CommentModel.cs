@@ -12,6 +12,5 @@ namespace CommentsReader.Models
         public string Date { get; set; }
         public string Link { get; set; }
         public string Rating { get; set; }
-
     }
 }

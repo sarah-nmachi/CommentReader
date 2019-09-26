@@ -22,7 +22,7 @@ namespace CommentsReader.Services
             _configuration = configuration;
         }
 
-        // RETURNS THE WHOLE COMMENT UP TO 1000 BECAUSE OF TIME OUT
+        // RETURNS THE WHOLE COMMENT 
         public async Task<List<Item>> GetComments(string videoId)
         {
             List<Item> items = new List<Item>();
@@ -45,9 +45,8 @@ namespace CommentsReader.Services
                     List<Item> currentItems = obj.items;
                     items.AddRange(currentItems);
 
-                    //The server times out if it waits for too long.
-                    //So let's get the first 1000 if the comments are more than 1000
-                    if (obj.nextPageToken == null || items.Count >= 1000)
+                    
+                    if (obj.nextPageToken == null)
                     {
                         break;
                     }

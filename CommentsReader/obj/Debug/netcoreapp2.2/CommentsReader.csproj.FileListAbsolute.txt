@@ -14,7 +14,6 @@ C:\Users\sarah\source\repos\CommentsReader\CommentsReader\obj\Debug\netcoreapp2.
 C:\Users\sarah\source\repos\CommentsReader\CommentsReader\obj\Debug\netcoreapp2.2\CommentsReader.TagHelpers.input.cache
 C:\Users\sarah\source\repos\CommentsReader\CommentsReader\obj\Debug\netcoreapp2.2\CommentsReader.TagHelpers.output.cache
 C:\Users\sarah\source\repos\CommentsReader\CommentsReader\obj\Debug\netcoreapp2.2\CommentsReader.RazorCoreGenerate.cache
-C:\Users\sarah\source\repos\CommentsReader\CommentsReader\obj\Debug\netcoreapp2.2\Razor\Views\Home\Error.g.cshtml.cs
 C:\Users\sarah\source\repos\CommentsReader\CommentsReader\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
 C:\Users\sarah\source\repos\CommentsReader\CommentsReader\obj\Debug\netcoreapp2.2\Razor\Views\Home\Privacy.g.cshtml.cs
 C:\Users\sarah\source\repos\CommentsReader\CommentsReader\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.g.cshtml.cs
