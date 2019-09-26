@@ -33,9 +33,15 @@ namespace CommentsReader
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-
+            services.AddHttpClient("youtube", c =>
+            {
+                c.BaseAddress = new Uri(" https://www.googleapis.com/youtube/v3/");
+                c.DefaultRequestHeaders.Add("Accept", "application/json");
+            });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddTransient<IYoutubeAPIService, YoutubeV3Service>();
+            //services.AddMvc(opt =>
+            //opt.EnableEndpointRouting = false);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
